@@ -1,3 +1,5 @@
+import numpy as np
+
 # Strings
 
 hello = "alo"
@@ -133,6 +135,50 @@ print("M[1] =", M[1]) # segunda linha
 print("M[1][2] =", M[1][2]) # terceiro elemento da segunda linha
 print("M[0][-1] =", M[0][-1]) # último elemento da primeira linha
 print("M[0][3] =", M[0][3])
+print("M[0][-2] =", M[0][-2])
 
+coluna = []; # lista vazia
+for linha in M:
+    coluna.append(linha[2])
+print("Terceira coluna =", coluna)
+
+# Pacote Numpy
+#Para pequenas tarefas de computação, é suficiente trabalhar com listas. Em tarefas mais
+#abrangentes, vamos preferir utilizar o pacote NumPy para trabalhar com matrizes:
+
+a = np.array([1, 2, 3])
+print(a) # Output: [1, 2, 3]
+print(type(a)) # Output: <class 'numpy.ndarray'>
+
+# Funções
+
+# Uma função definida pelo utilizador consiste numa sequência de instruções que são executadas
+# quando a própria função é invocada. Por exemplo, o seguinte programa permite-nos fazer print
+# de duas palavras cada vez que se invoca a função do_hello():
+def do_hello():
+    print("Hello")
+    print("World")
+
+do_hello()
+
+# As funções podem receber parâmetros e podem retornar valores (usando a palavra return):
+
+def add_one(x):
+    print("Got x=",x)
+    return x + 1
+
+value = add_one(1)
+print(value)
+
+# Também pode-se definir funções recursivas, que recorrem a elas próprias de modo a resolver o
+# problema. Tome como exemplo a seguinte função fatorial que calcula o fatorial de um número:
+
+def factorial(x):
+    if x == 0:
+        return 1
+    else:
+        return x * factorial(x-1)
+
+print(factorial(5))
 
 
